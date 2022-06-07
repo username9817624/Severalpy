@@ -1,5 +1,7 @@
 # Severalpy
 
+###### Python version 3.9
+
 Several .py files created in my free time for fun.
 
 ## License

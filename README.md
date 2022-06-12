@@ -2,7 +2,7 @@
 
 ###### Python version 3.9
 
-Several .py files created in my free time for fun.
+Several .py files created in my free time for fun. Made for CLI.
 
 ## License
 

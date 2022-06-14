@@ -23,38 +23,25 @@ def board_user(Y):
             board[2][2] = Y
 
 
-def board_check_win(Q):
-    if Q == board[0][0] and Q == board[0][1] and Q == board[0][2] or \
-            Q == board[1][0] and Q == board[1][1] and Q == board[1][2] or \
-            Q == board[2][0] and Q == board[2][1] and Q == board[2][2] or \
-            Q == board[0][0] and Q == board[1][0] and Q == board[2][0] or \
-            Q == board[0][1] and Q == board[1][1] and Q == board[2][1] or \
-            Q == board[0][2] and Q == board[1][2] and Q == board[2][2] or \
-            Q == board[0][0] and Q == board[1][1] and Q == board[2][2] or \
-            Q == board[0][2] and Q == board[1][1] and Q == board[2][0]:
+def board_check_win_tie(Q):
+    b = [Q, Q, Q]
+    if b == board[0] or b == board[1] or b == board[2] or \
+            Q in board[0][0] and Q in board[1][0] and Q in board[2][0] or \
+            Q in board[0][1] and Q in board[1][1] and Q in board[2][1] or \
+            Q in board[0][2] and Q in board[1][2] and Q in board[2][2] or \
+            Q in board[0][0] and Q in board[1][1] and Q in board[2][2] or \
+            Q in board[0][2] and Q in board[1][1] and Q in board[2][0]:
         print(Q, "is the winner!")
         restart_f()
-
-
-def board_check_tie():
-    if '#' != board[0][0] and '#' != board[0][1] and '#' != board[0][2] and \
-            '#' != board[1][0] and '#' != board[1][1] and '#' != board[1][2] and \
-            '#' != board[2][0] and '#' != board[2][1] and '#' != board[2][2]:
+    elif '#' not in board[0] and '#' not in board[1] and '#' not in board[2]:
         print("Tie.")
         restart_f()
 
 
 def restart_f():
-    board[0][0] = '#'
-    board[0][1] = '#'
-    board[0][2] = '#'
-    board[1][0] = '#'
-    board[1][1] = '#'
-    board[1][2] = '#'
-    board[2][0] = '#'
-    board[2][1] = '#'
-    board[2][2] = '#'
-    restart = input("RESTART? (y/n): ")
+    global board
+    board = [['#', '#', '#'], ['#', '#', '#'], ['#', '#', '#']]
+    restart = input("\nRESTART? (y/n): ")
     if restart == 'y':
         return
     elif restart == 'n':
@@ -66,9 +53,8 @@ while True:
     print('\n', board[0][0], '|', board[0][1], '|', board[0][2], '\n', '---------', '\n',
           board[1][0], '|', board[1][1], '|', board[1][2], '\n', '---------', '\n',
           board[2][0], '|', board[2][1], '|', board[2][2])
-    board_check_win('X')
-    board_check_win('O')
-    board_check_tie()
+    board_check_win_tie('X')
+    board_check_win_tie('O')
     while True:
         user_turn = int(input("\nUser 1 or User 2? (1/2): "))
         user_num = int(input("Enter a number (1-9): "))

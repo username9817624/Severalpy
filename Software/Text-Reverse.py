@@ -1,3 +1,4 @@
-txt = input("Enter your text: ")
-r = txt[::-1]
-print(r)
+while True:
+    txt = input("Enter your text: ")
+    r = txt[::-1]
+    print(r)

@@ -10,5 +10,4 @@ while True:
             15: "Don't count on it.", 16: "My reply is no.", 17: "My sources say no.", 18: "Outlook not so good.",
             19: "Very doubtful."
         }
-    r_a = random.choice(a)
-    print(r_a)
+    print(random.choice(a))

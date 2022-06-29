@@ -10,7 +10,7 @@ def game(x, y):
         d3 = random.randint(1, 6)
         win_p = [d1 == d2 != d3]  # True or False
         print(x, "TURN")
-        print(d1, d2, d3)
+        print("Dice rolls:", d1, d2, d3)
         if d1 == d2 == d3 or d1 == 4 and d2 == 5 and d3 == 6 or win_p[0] is True and (d3 == 6):  # Automatic Win
             return print(x, "wins!")
         elif d1 == 1 and d2 == 2 and d3 == 3 or win_p[0] is True and (d3 == 1):  # Automatic Loss

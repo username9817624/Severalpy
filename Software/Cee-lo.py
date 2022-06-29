@@ -16,9 +16,8 @@ def game(x, y):
         elif d1 == 1 and d2 == 2 and d3 == 3 or win_p[0] is True and (d3 == 1):  # Automatic Loss
             return print(y, "wins!")
         elif win_p[0] is True and (int(d3) in range(2, 5)):  # Set Bank Point / Switch. w. Player
-            set_point = 0
+            set_point = d3
             set_point_p = 0
-            set_point += d3
             set_point_p += d3
             if set_point == d3 and x == "Bank":  # Checks if  set_point has a value and that x = Bank
                 set_point_p -= d3

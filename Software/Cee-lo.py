@@ -22,7 +22,7 @@ def game(x, y):
                 set_point_p = 0
             else:
                 set_point_p = d3
-            if set_point in (2, 3, 4, 5) and x == "Bank":  # Checks if set_point has a value
+            if set_point in (2, 3, 4, 5) and x == "Bank":
                 print("SET POINT =", set_point, "\nAction -> SWITCH")
                 return input("Press anything to continue: "), game("Player", "Bank")
             elif set_point_p > set_point and x == "Player":  # Checks if Player has a higher number than Bank

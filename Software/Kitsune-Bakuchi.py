@@ -12,5 +12,4 @@ while True:
         print("Player wins. Payout: $" + str(bet * 4))
     else:
         print("Bank wins.")
-    input("\nEnter anything to play again: ")
-    os.system('cls||clear')
+    input("\nEnter anything to play again: "), os.system('cls||clear')

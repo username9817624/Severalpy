@@ -5,8 +5,8 @@ import os
 def game(x, y):
     while True:
         os.system('cls||clear')
-        d1 = 2
-        d2 = 2
+        d1 = random.randint(1, 6)
+        d2 = random.randint(1, 6)
         d3 = random.randint(1, 6)
         win_p = [d1 == d2 != d3]  # True or False
         print(x, "TURN")
